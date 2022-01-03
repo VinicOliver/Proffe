@@ -1,0 +1,20 @@
+{
+  "name": "proffe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/server.js"
+  },
+  "keywords": [],
+  "author": "Vinicius C. de Oliveira",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2",
+    "nunjucks": "^3.2.3",
+    "sqlite-async": "^1.1.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

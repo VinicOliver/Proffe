@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="/resources/styles/register.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Cadastrar Aulas | Proffe's</title>
+</head>
+<body>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
+    <header>
+        <a href="/index">Proffe's</a>
+    </header>
+    <main>
+        <section>
+            <h1>Sobre você...</h1>
+            <hr>
+
+            <div class="padding-left">
+
+                <p class="double-margin-bottom">Para poder ofertar algum conteúdo, precisamos saber algumas informações sobre você.</p>
+                
+                <form action="/register" id="frmClass" method="post">
+                    <label for="name">Nome completo</label>
+                    <input type="text" name="completName" id="name" placeholder="Nome completo" required>
+                    
+                    <label for="phone">Número (WhatsApp)</label>
+                    <input type="text" name="phone" id="phone" placeholder="(00) 9 1234-5678" required>
+                    
+                    <label for="photo">Link de uma foto sua:</label>
+                    <input type="text" name="photo" id="photo" placeholder="Comece com https://" required>
+                    
+                    <label for="bio">Sobre você:</label>
+                    <textarea name="about" id="about" cols="30" rows="10" required></textarea>
+                    
+                    <h1>Sobre sua aula...</h1>
+                    <hr>
+
+                    <p class="double-margin-bottom">Agora, precisamos de informações sobre a sua aula.</p>
+
+                    <div class="padding-left margin-bottom">
+
+                        <label for="disciplinas" class="block">Pra começar nos diga o que você gostaria de ensinar:</label>
+                        <select name="subject" id="subjects" class="full-width" required>
+
+                            <option value="">Selecione uma disciplina</option>
+
+                            {% for subject in subjects %}
+                                <option value= "{{loop.index0}}">{{subject}}</option>
+                            {% endfor %}
+
+                        </select>
+                    </div>
+
+                    <div class="flex-align padding-left">
+                        <label for="cost">E qual o valor da sua hora aula</label>
+                        <input type="text" name="cost" id="cost" placeholder="R$" required>
+                    </div>
+
+                    <h1>Horários</h1>
+                    <hr>
+
+                    <div>
+                        <div class="flex-align double-margin-bottom">
+                            <p>Escolha o dia e horário da sua(s) aula(s):</p>
+                            <button type="button" id="add-time" class="add-time">+ Novo horário</button>
+                        </div>
+
+                        <div class="padding-left margin-bottom">
+                            <div>
+
+                                <label for="select-weekday" class="block">Escolha um dia da semana:</label>
+                                <select name="weekday[]" id="weekdays" class="full-width" required>
+
+                                    <option value="">Selecione um dia</option>
+
+                                    {% for weekday in weekdays %}
+                                    <option value="{{loop.index0}}">{{weekday}}</option>
+                                    {% endfor %}
+
+                                </select>
+                            </div>
+
+                            <div class="flex">
+                                <div class="margin-right">
+                                    <label for="time-from" class="block margin-right">Das</label>
+                                    <input name="time_from[]" id="time-from" type="time" required>
+                                </div>
+                                <div>
+                                    <label for="time-to" class="block margin-right">Até</label>
+                                    <input name="time_to[]" id="time-to" type="time" required>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="padding-left margin-bottom">
+                            <div>
+
+                                <label for="select-weekday" class="block">Escolha um dia da semana:</label>
+                                <select name="weekday[]" id="weekdays" class="full-width" required>
+
+                                    <option value="">Selecione um dia</option>
+
+                                    {% for weekday in weekdays %}
+                                    <option value="{{loop.index0}}">{{weekday}}</option>
+                                    {% endfor %}
+
+                                </select>
+                            </div>
+
+                            <div class="flex">
+                                <div class="margin-right">
+                                    <label for="time-from" class="block margin-right">Das</label>
+                                    <input name="time_from[]" id="time-from" type="time" required>
+                                </div>
+                                <div>
+                                    <label for="time-to" class="block margin-right">Até</label>
+                                    <input name="time_to[]" id="time-to" type="time" required>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <button class="register-button">Cadastrar!</button>
+
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>
+            Plataforma Proffe's - Todos os direitos reservados.
+        </p>
+    </footer>
+    <script type="javascript" src="/resources/scripts/addField.js"></script>
+</body>
+</html>

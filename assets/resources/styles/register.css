@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300&display=swap');
+
+body {
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    margin: 0;
+    background-color: #eceaea;
+}
+
+main {
+    width: 95%;
+    margin: 50px auto 150px;
+    display: flex;
+    justify-content: space-around;
+}
+
+header {
+    background-color: black;
+    padding: 30px 110px;
+}
+
+header > a {
+    text-decoration: none;
+    color: white;
+    font-size: 3rem;
+}
+
+.padding-left {
+    padding-left: 10px;
+}
+
+.margin-bottom {
+    margin-bottom: 20px;
+}
+
+.double-margin-bottom {
+    margin-bottom: 40px;
+}
+
+.margin-right {
+    margin-right: 50px;
+}
+
+.full-width {
+    width: 100%;
+}
+
+form {
+    display: grid;
+}
+
+label, input, select {
+    margin-bottom: 20px;
+}
+
+input, select {
+    border-radius: 5px;
+    line-height: 30px;
+    border-color: black;
+    border-width: 1.5px;
+}
+
+select {
+    padding: 5px 0;
+}
+
+select:focus,
+input:focus,
+textarea:focus {
+    outline: 0;
+}
+
+textarea {
+    border-radius: 5px;
+    resize: vertical;
+}
+
+.register-button {
+    color: black;
+    font-weight: 900;
+    font-size: 1rem;
+    background-color: #6C767D;
+
+    margin-top: 80px;
+    border-radius: 10px;
+    border: 2px solid #6C767D;
+    line-height: 50px;
+}
+
+.add-time {
+    padding: 10px;
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    border: black;
+    border-radius: 5px;
+}
+
+.flex-align {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex {
+    display: flex;
+}
+
+.block {
+    display: block;
+    width: 100%;
+}
+
+footer {
+    background-color: black;
+    padding: 5px;
+}
+
+footer > p {
+    text-align: center;
+    color: white;
+}
+
+hr {
+    size: 2px;
+    width: 100%;
+}

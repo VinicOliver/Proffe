@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="/resources/styles/search.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Procurar Professores | Proffe's</title>
+</head>
+<body>
+    <header>
+        <a href="/index">Proffe's</a>
+    </header>
+    <main id="main">
+
+        <section>
+            <h1>Escolha os campos abaixo pra gente localizar um proffe's para você...</h1>
+            <div class="padding-left">
+                <p class="margin-bottom">Filtros</p>
+                <form action="/search" class="filters-form" method="post">
+                    <select name="subject" id="subjects" class="margin-right">
+                        <option value="">Selecione uma disciplina</option>
+                        {% for subject in subjects %}
+                            <option value= "{{loop.index0}}">{{subject}}</option>
+                        {% endfor %}
+                    </select>
+                    <select name="weekday" id="weekday" class="margin-right">
+                        <option value="">Selecione um dia</option>
+                        {% for weekday in weekdays %}
+                            <option value="{{loop.index0}}">{{weekday}}</option>
+                        {% endfor %}
+                    </select>
+                    <div class="triple-margin-right time-block">
+                        <label for="time" class="margin-right time-text">Horário</label>
+                        <input name="time" id="time" type="time" class="time-content">
+                    </div>                    
+                    <button class="filter">Filtrar</button>
+                </form>
+            </div>
+        </section>
+
+        <section>
+
+            {% if teachers == '' %}
+                <div class="teachers">
+                    <h1>Infelizmente não conseguimos encontrar um proffe's :(</h1>
+                    <p>Tente mudar os filtros, pode ser que a gente consiga encontrar numa próxima.</p>
+                </div>
+
+            {% else %}
+                <h1>Aqui estão os proffe's disponíveis para você</h1>
+                <div class="teachers">
+                    
+                    {% for teacher in teachers %}
+                    <article class="teacher">
+                        <div class="content">
+                            <div class="photo">
+                                <img src={{teacher.photo}}></img>
+                            </div>
+                            <div class="info">
+                                <p>{{teacher.name}}</p>
+                                <p>{{teacher.subject}}</p>
+                                <p>Sobre/Bio: {{teacher.about}}</p>
+                                <p>R$ {{teacher.cost}}</p>
+                            </div>
+                        </div>
+                        <div class='link-area'>
+                            <a href='https://api.whatsapp.com/send?phone=+55{{teacher.phone}}' target='_blank' 
+                            class="link-button">Entrar em contato</a>
+                        </div>
+                    </article>
+                    {% endfor %}
+
+                </div>
+
+            {% endif %}
+
+        </section>
+    </main>
+    <footer>
+        <p>
+            Plataforma Proffe's - Todos os direitos reservados.
+        </p>
+    </footer>
+    <script src="/assets/resources/scripts/search.js"></script>
+</body>
+</html>

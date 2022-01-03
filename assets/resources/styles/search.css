@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300&display=swap');
+
+body {
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    margin: 0;
+    background-color: #eceaea;
+}
+
+main {
+    width: 900px;
+    margin: 50px auto 150px;
+}
+
+header {
+    background-color: black;
+    padding: 30px 110px;
+}
+
+.margin-right {
+    margin-right: 15px;
+}
+
+.triple-margin-right {
+    margin-right: 45px;
+}
+
+header > a {
+    text-decoration: none;
+    color: white;
+    font-size: 3rem;
+}
+
+section {
+    display: block;
+    width: 100%;
+    margin-bottom: 80px;
+}
+
+h1 {
+    margin-bottom: 50px;
+}
+
+.filters-form {
+    display: flex;
+}
+
+.filter {
+    width: 100px;
+    padding: 10px;
+    border-radius: 5px;
+    margin-left: 25px;
+    border: 1.8px solid #6C767D;
+    background-color: #6C767D;
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.filter:hover {
+    cursor: pointer;
+    transition: .8s;
+    background-color: #9da9b1;
+    border-color: #9da9b1;
+}
+
+.time-block {
+    display: flex;
+}
+
+.time-text {
+    align-self: center;
+}
+
+.time-content {
+    padding: 15px;
+    border-radius: 5px;
+    border: none;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    margin-bottom: 20px;
+}
+
+.teacher {
+    border: 2px solid #0000005c;
+    border-radius: 40px;
+    padding: 30px 35px;
+    width: 600px;
+    margin-bottom: 50px;
+    background-color: white;
+}
+
+.photo {
+    height: 8rem;
+    width: 8rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.photo > img {
+    height: 100%;
+}
+
+.info {
+    padding-left: 50px;
+}
+
+.margin-bottom {
+    margin-bottom: 30px;
+}
+
+select {
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    font-weight: 700;
+    padding: 15px 5px;
+    width: 200px;
+    border: none;
+    border-radius: 5px;
+}
+
+select:focus {
+    outline: 0;
+}
+
+.teachers {
+    padding-left: 10px;
+}
+
+.link-area {
+    display: flex;
+    justify-content: right;
+}
+
+.link-button {
+    padding: 15px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 700;
+    margin-right: 40px;
+}
+
+.link-button:hover {
+    cursor: pointer;
+    transition: .8s;
+    background-color: #9da9b1;
+}
+
+footer {
+    background-color: black;
+    padding: 5px;
+}
+
+footer > p {
+    text-align: center;
+    color: white;
+}
+
+@media (max-width: 800px) {
+    main {
+        margin: 0 auto;
+        width: 90%;
+    }
+
+    header, footer {
+        width: 100%;
+    }
+}
